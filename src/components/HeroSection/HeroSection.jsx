@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="flex gap-5 flex-col md:flex-row md:gap-16 items-center">
+    <section className="flex gap-10 flex-col md:flex-row md:gap-16 items-center">
       <motion.div
         className="md:mr-2 text-center md:text-left"
         initial={{ opacity: 0, scale: 0.5 }}
