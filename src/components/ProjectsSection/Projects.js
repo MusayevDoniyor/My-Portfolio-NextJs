@@ -29,7 +29,7 @@ export const games = [
 
 export const web = [
   {
-    id: 1,
+    id: 4,
     name: "E-commerse, Krist",
     img: "/E-commerseKrist.png",
     demo: "https://e-commerse-krist.vercel.app/",
@@ -38,7 +38,7 @@ export const web = [
   },
 
   {
-    id: 2,
+    id: 5,
     name: "Grocey List",
     img: "/GroceryList.png",
     demo: "https://grocery-list-self.vercel.app/",
@@ -47,7 +47,7 @@ export const web = [
   },
 
   {
-    id: 3,
+    id: 6,
     name: "Talk Business",
     img: "/TalkBusiness.png",
     demo: "https://talk-business.vercel.app/",
@@ -57,7 +57,7 @@ export const web = [
   },
 
   {
-    id: 4,
+    id: 7,
     name: "React Js Blog",
     img: "/ReactJsBlog.png",
     demo: "https://blog-react-js4.netlify.app/",
@@ -66,7 +66,7 @@ export const web = [
   },
 
   {
-    id: 5,
+    id: 8,
     name: "GameGeek",
     img: "/GameGeek.png",
     demo: "https://exam-7-game-geek.vercel.app/",
@@ -77,7 +77,7 @@ export const web = [
 
 export const romantic = [
   {
-    id: 1,
+    id: 9,
     name: "Neon Heart",
     img: "/NeonHeart.png",
     demo: "https://musayevdoniyor.github.io/Neon-Heart/",
@@ -86,7 +86,7 @@ export const romantic = [
   },
 
   {
-    id: 2,
+    id: 10,
     name: "Heart Shaders",
     img: "/HeartShaders.png",
     demo: "https://heartshaders.netlify.app/",

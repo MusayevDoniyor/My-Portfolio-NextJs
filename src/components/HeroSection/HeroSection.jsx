@@ -50,17 +50,17 @@ export default function HeroSection() {
 
         <div className="space-y-4">
           <Link
-            class="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-slate-200 text-white"
+            className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-slate-200 text-white"
             href="/#contact"
           >
             Hire Me
           </Link>
 
           <Link
-            class="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
+            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
             href="/"
           >
-            <span class="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
               Download CV
             </span>
           </Link>

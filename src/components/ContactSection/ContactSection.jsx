@@ -1,8 +1,24 @@
-import Link from "next/link";
+"use client";
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "emailjs-com";
 
 export default function ContactSection() {
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm("service_sxh3yiw", "template_4ga329h", e.target).then(
+      (result) => {
+        console.log(result.text);
+        alert("Message sent successfully!");
+      },
+      (error) => {
+        console.log(error.text);
+        alert("Failed to send message. Please try again later.");
+      }
+    );
+  };
+
   return (
     <section
       className="flex flex-col md:flex-row gap-4 my-12 py-24 relative"
@@ -22,21 +38,29 @@ export default function ContactSection() {
         </p>
 
         <div className="flex flex-row gap-4">
-          <Link href="https://github.com/MusayevDoniyor">
-            <FaGithub className="text-white size-12" />
-          </Link>
+          <a
+            href="https://github.com/MusayevDoniyor"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub className="text-white text-3xl" />
+          </a>
 
-          <Link href="https://www.linkedin.com/in/doniyor-musayev-2783592a4/">
-            <FaLinkedin className="text-white size-12" />
-          </Link>
+          <a
+            href="https://www.linkedin.com/in/doniyor-musayev-2783592a4/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="text-white text-3xl" />
+          </a>
         </div>
       </div>
       <div className="flex-1">
-        <form class="flex flex-col">
-          <div class="mb-6">
+        <form onSubmit={sendEmail} className="flex flex-col">
+          <div className="mb-6">
             <label
-              for="email"
-              class="text-white block mb-2 text-sm font-medium"
+              htmlFor="email"
+              className="text-white block mb-2 text-sm font-medium"
             >
               Your email
             </label>
@@ -44,17 +68,17 @@ export default function ContactSection() {
             <input
               type="email"
               id="email"
-              required=""
-              class="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="jacob@google.com"
               name="email"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="jacob@google.com"
             />
           </div>
 
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="subject"
-              class="text-white block text-sm mb-2 font-medium"
+              htmlFor="subject"
+              className="text-white block text-sm mb-2 font-medium"
             >
               Subject
             </label>
@@ -62,17 +86,17 @@ export default function ContactSection() {
             <input
               type="text"
               id="subject"
-              required=""
-              class="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Just saying hi"
               name="subject"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              placeholder="Just saying hi"
             />
           </div>
 
-          <div class="mb-6">
+          <div className="mb-6">
             <label
-              for="message"
-              class="text-white block text-sm mb-2 font-medium"
+              htmlFor="message"
+              className="text-white block text-sm mb-2 font-medium"
             >
               Message
             </label>
@@ -80,20 +104,21 @@ export default function ContactSection() {
             <textarea
               name="message"
               id="message"
-              class="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
+              required
+              className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
             />
           </div>
 
           <button
             type="submit"
-            class="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+            onClick={sendEmail}
+            className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
             Send Message
           </button>
         </form>
       </div>
-      <div></div>
     </section>
   );
 }
