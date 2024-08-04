@@ -48,12 +48,7 @@ export default function HeroSection() {
           personal projects, and contributing to open-source communities.
         </p>
 
-        <motion.div
-          className="space-y-4"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="space-y-4">
           <Link
             class="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-slate-200 text-white"
             href="/#contact"
@@ -69,10 +64,15 @@ export default function HeroSection() {
               Download CV
             </span>
           </Link>
-        </motion.div>
+        </div>
       </motion.div>
 
-      <div className="flex-shrink-0">
+      <motion.div
+        className="flex-shrink-0"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+      >
         <Image
           src={avatar}
           alt="Avatar"
@@ -80,7 +80,7 @@ export default function HeroSection() {
           width={400}
           height={500}
         />
-      </div>
+      </motion.div>
     </section>
   );
 }

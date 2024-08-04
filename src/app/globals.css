@@ -18,3 +18,23 @@ body {
   color: #fff;
   background: #121212;
 }
+
+.border-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-animation::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #6d28d9;
+  transition: width 0.3s ease;
+}
+
+.border-animation.active::before {
+  width: 100%;
+}
