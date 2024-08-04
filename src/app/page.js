@@ -1,11 +1,14 @@
 import Header from "@/components/header/Header";
+import HeroSection from "@/components/HeroSection/HeroSection";
 
 export default function Home() {
   return (
     <>
       <Header />
 
-      <main className="min-h-screen px-4 md:px-16"></main>
+      <main className="min-h-screen mt-36 px-4 md:px-16">
+        <HeroSection />
+      </main>
     </>
   );
 }
