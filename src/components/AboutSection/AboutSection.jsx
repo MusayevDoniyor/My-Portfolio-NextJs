@@ -24,7 +24,7 @@ export default function AboutSection() {
 
   return (
     <section
-      className="flex flex-col md:flex-row gap-5 py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+      className="flex flex-col lg:flex-row gap-4 py-8 px-2 xl:gap-16 sm:py-16 xl:px-16"
       id="about"
     >
       <div className="flex-shrink-0">
