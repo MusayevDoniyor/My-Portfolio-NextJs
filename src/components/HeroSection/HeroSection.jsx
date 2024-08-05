@@ -58,17 +58,17 @@ export default function HeroSection() {
 
           <Link
             className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
-            href="/"
+            href="https://my-resume-tau-umber.vercel.app/"
           >
             <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-              Download CV
+              Open CV
             </span>
           </Link>
         </div>
       </motion.div>
 
       <motion.div
-        className="flex-shrink-0"
+        className="flex-shrink-0 rounded-full bg-[#181818] p-7"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -76,7 +76,7 @@ export default function HeroSection() {
         <Image
           src={avatar}
           alt="Avatar"
-          className="rounded-full bg-[#181818]"
+          className="p-7"
           width={400}
           height={500}
         />
