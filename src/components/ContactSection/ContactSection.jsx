@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -22,25 +23,29 @@ export default function ContactSection() {
         </p>
 
         <div className="flex flex-row gap-4">
-          <a
+          <Link
             href="https://github.com/MusayevDoniyor"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub className="text-white text-3xl" />
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="https://www.linkedin.com/in/doniyor-musayev-2783592a4/"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin className="text-white text-3xl" />
-          </a>
+          </Link>
         </div>
       </div>
       <div className="flex-1">
-        <form className="flex flex-col">
+        <form
+          action="https://formspree.io/f/meojkjjg"
+          method="POST"
+          className="flex flex-col"
+        >
           <div className="mb-6">
             <label
               htmlFor="email"

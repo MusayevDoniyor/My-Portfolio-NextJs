@@ -21,7 +21,7 @@ export default function Header() {
             className="text-2xl md:text-5xl text-white font-semibold"
             href="/"
           >
-            MD
+            DM
           </Link>
           <div className="block md:hidden">
             <button
