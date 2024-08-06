@@ -1,24 +1,8 @@
 "use client";
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-import emailjs from "emailjs-com";
 
 export default function ContactSection() {
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs.sendForm("service_sxh3yiw", "template_4ga329h", e.target).then(
-      (result) => {
-        console.log(result.text);
-        alert("Message sent successfully!");
-      },
-      (error) => {
-        console.log(error.text);
-        alert("Failed to send message. Please try again later.");
-      }
-    );
-  };
-
   return (
     <section
       className="flex flex-col md:flex-row gap-4 my-12 py-24 relative"
@@ -56,7 +40,7 @@ export default function ContactSection() {
         </div>
       </div>
       <div className="flex-1">
-        <form onSubmit={sendEmail} className="flex flex-col">
+        <form className="flex flex-col">
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -112,7 +96,6 @@ export default function ContactSection() {
 
           <button
             type="submit"
-            onClick={sendEmail}
             className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
           >
             Send Message

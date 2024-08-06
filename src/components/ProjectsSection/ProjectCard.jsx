@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ProjectCard({ img, name, github, demo, description }) {
   return (
-    <div className="relative group rounded-lg overflow-hidden shadow-lg h-96">
+    <div className="relative group rounded-lg overflow-hidden shadow-lg h-96 pb-2">
       <div className="relative w-full h-3/4 overflow-hidden">
         <Image
           src={img}
@@ -12,7 +12,7 @@ export default function ProjectCard({ img, name, github, demo, description }) {
           layout="fill"
           className="transition-transform duration-300 transform group-hover:scale-110 object-cover"
         />
-        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
+        <div className="overlay items-center justify-center absolute top-0 left-0 w-full h-full bg-[#1b1b1b] bg-opacity-0 hidden group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
           <Link
             className="h-14 w-14 border-2 rounded-full border-[#ADB7BE] hover:border-white flex items-center justify-center mx-2"
             href={github}
@@ -66,7 +66,7 @@ export default function ProjectCard({ img, name, github, demo, description }) {
 
       <div className="p-4">
         <h3 className="text-xl font-semibold">{name}</h3>
-        <p className="mt-2 text-gray-600">{description}</p>
+        <p className="mt-2 text-gray-400">{description}</p>
       </div>
     </div>
   );
