@@ -3,8 +3,8 @@ import React from "react";
 import { TypeAnimation } from "react-type-animation";
 import avatar from "./../../../public/hero-image.png";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function HeroSection() {
   return (
@@ -51,17 +51,27 @@ export default function HeroSection() {
         <div className="space-y-4">
           <Link
             className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-r from-pink-500 to-purple-600 hover:bg-slate-200 text-white"
-            href="/#contact"
+            href="#contact"
           >
             Hire Me
           </Link>
 
           <Link
-            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
+            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
             href="https://my-resume-tau-umber.vercel.app/"
           >
             <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
-              Open CV
+              Open My CV site
+            </span>
+          </Link>
+
+          <Link
+            className="px-1 inline-block py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-pink-500 to-purple-600 hover:bg-slate-800 text-white mt-3"
+            href="/RESUME.wps"
+            download
+          >
+            <span className="block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2">
+              Download CV
             </span>
           </Link>
         </div>

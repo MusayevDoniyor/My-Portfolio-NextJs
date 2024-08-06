@@ -17,9 +17,9 @@ export default function FilterProjects() {
 
   return (
     <div>
-      <div className="flex flex-row justify-center items-center gap-3 py-6">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-4 py-6">
         <button
-          className={`rounded-full border-2 px-6 py-3 text-xl cursor-pointer ${
+          className={`rounded-full w-full sm:w-fit sm:mx-2 border-2 px-6 py-3 text-xl cursor-pointer ${
             selectedCategory === "all"
               ? "border-purple-500 text-white"
               : "border-[#ADB7BE] text-[#ADB7BE] hover:border-white"
@@ -30,7 +30,7 @@ export default function FilterProjects() {
         </button>
 
         <button
-          className={`rounded-full border-2 px-6 py-3 text-xl cursor-pointer ${
+          className={`rounded-full w-full sm:w-fit sm:mx-2 border-2 px-6 py-3 text-xl cursor-pointer ${
             selectedCategory === "games"
               ? "border-purple-500 text-white"
               : "border-[#ADB7BE] text-[#ADB7BE] hover:border-white"
@@ -41,7 +41,7 @@ export default function FilterProjects() {
         </button>
 
         <button
-          className={`rounded-full border-2 px-6 py-3 text-xl cursor-pointer ${
+          className={`rounded-full w-full sm:w-fit sm:mx-2 border-2 px-6 py-3 text-xl cursor-pointer ${
             selectedCategory === "web"
               ? "border-purple-500 text-white"
               : "border-[#ADB7BE] text-[#ADB7BE] hover:border-white"
@@ -52,7 +52,7 @@ export default function FilterProjects() {
         </button>
 
         <button
-          className={`rounded-full border-2 px-6 py-3 text-xl cursor-pointer ${
+          className={`rounded-full w-full sm:w-fit sm:mx-2 border-2 px-6 py-3 text-xl cursor-pointer ${
             selectedCategory === "romantic"
               ? "border-purple-500 text-white"
               : "border-[#ADB7BE] text-[#ADB7BE] hover:border-white"
