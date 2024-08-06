@@ -1,9 +1,48 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function ContactSection() {
+  const [formData, setFormData] = useState({
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("https://formspree.io/f/meojkjjg", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setFormData({ email: "", subject: "", message: "" });
+      setStatusMessage("Message sent successfully!");
+      setIsSuccess(true);
+    } else {
+      setStatusMessage("Failed to send message. Please try again.");
+      setIsSuccess(false);
+    }
+
+    setTimeout(() => {
+      setStatusMessage("");
+    }, 2000);
+  };
+
   return (
     <section
       className="flex flex-col md:flex-row gap-4 my-12 py-24 relative"
@@ -41,11 +80,7 @@ export default function ContactSection() {
         </div>
       </div>
       <div className="flex-1">
-        <form
-          action="https://formspree.io/f/meojkjjg"
-          method="POST"
-          className="flex flex-col"
-        >
+        <form onSubmit={handleSubmit} className="flex flex-col">
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -58,6 +93,8 @@ export default function ContactSection() {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="jacob@google.com"
@@ -76,6 +113,8 @@ export default function ContactSection() {
               type="text"
               id="subject"
               name="subject"
+              value={formData.subject}
+              onChange={handleChange}
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Just saying hi"
@@ -93,6 +132,8 @@ export default function ContactSection() {
             <textarea
               name="message"
               id="message"
+              value={formData.message}
+              onChange={handleChange}
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
               placeholder="Let's talk about..."
@@ -106,6 +147,16 @@ export default function ContactSection() {
             Send Message
           </button>
         </form>
+
+        {statusMessage && (
+          <div
+            className={`mt-4 p-2 rounded-lg text-center ${
+              isSuccess ? "bg-green-500" : "bg-red-500"
+            } text-white`}
+          >
+            {statusMessage}
+          </div>
+        )}
       </div>
     </section>
   );
